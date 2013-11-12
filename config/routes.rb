@@ -1,9 +1,17 @@
 GiantRiver::Application.routes.draw do
   
+  get "reviews/index"
+  get "reviews/new"
+  get "reviews/edit"
+  get "reviews/show"
   root 'products#index'
   resources :users
-  resources :products
+  
   resources :sessions, :only => [:new, :create, :destroy]
+
+  resources :products do
+    resources :reviews
+  end
 
  
   # The priority is based upon order of creation: first created -> highest priority.
