@@ -1,0 +1,15 @@
+<h1>Giant River in the Jungle</h1>
+
+
+<%= link_to "Add a product", "/products/new" %>
+
+<% @products.each do |product| %>
+<ul>
+  <li><%= link_to product[:name], "/products/#{product[:id]}" %>, $<%= product.formatted_price %></li>
+</ul>
+
+<% end %>
+
+
+
+<p>Find me in app/views/products/index.html.erb</p>
